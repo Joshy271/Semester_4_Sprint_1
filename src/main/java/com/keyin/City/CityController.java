@@ -13,12 +13,12 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
-    @GetMapping("/Cities")
+    @GetMapping("/cities")
     public List<City> getAllCity(){
         return cityService.getAllCity();
     }
 
-    @GetMapping("/Cities_Search")
+    @GetMapping("/cities_search")
     public List<City> getCityByPrams(@RequestParam String cityName){
         CitySearchPrams citySearchPrams = new CitySearchPrams();
 
@@ -27,10 +27,9 @@ public class CityController {
         return cityService.findCityByPrams(citySearchPrams);
     }
 
-    @PostMapping
-    public ResponseEntity<City> createCity(@RequestBody City city) {
-        City createdCity = cityService.createCity(city);
-        return new ResponseEntity<>(createdCity, HttpStatus.CREATED);
+    @PostMapping("/cities")
+    public City cities(@RequestBody City city) {
+        return cityService.createCity((city));
     }
 
 }
