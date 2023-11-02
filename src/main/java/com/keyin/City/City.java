@@ -6,6 +6,13 @@ public class City {
     private String state;
     private int population;
 
+    public City(long id, String name, String state, int population){
+        this.id = id;
+        this.name = name;
+        this.state = state;
+        this.population = population;
+    }
+
     public long getId(){
         return id;
     }

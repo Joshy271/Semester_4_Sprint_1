@@ -4,19 +4,19 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.keyin.Main;
 
 @Service
 public class CityService {
-    private List<City> cityList = new ArrayList<City>();
 
-    public List<City> getAllCity(){
-        return cityList;
+    public static List<City> getAllCity(){
+        return Main.cities;
     }
 
-    public List<City> findCityByPrams(CitySearchPrams citySearchPrams) {
+    public static List<City> findCityByPrams(CitySearchPrams citySearchPrams) {
         List<City> searchResults = new ArrayList<City>();
 
-        for (City city : cityList) {
+        for (City city : Main.cities) {
             if (city.getName().equalsIgnoreCase(citySearchPrams.getName())){
                 searchResults.add(city);
             }
@@ -24,7 +24,7 @@ public class CityService {
         return searchResults;
     }
     public City createCity(City city){
-        cityList.add(city);
+        Main.cities.add(city);
 
         return city;
     }
