@@ -1,24 +1,24 @@
 package com.keyin.City;
 
 public class City {
-    private long id;
+    private long Cityid;
     private String name;
     private String state;
     private int population;
 
     public City(long id, String name, String state, int population){
-        this.id = id;
+        this.Cityid = id;
         this.name = name;
         this.state = state;
         this.population = population;
     }
 
     public long getId(){
-        return id;
+        return Cityid;
     }
 
     public void setId() {
-        this.id = id;
+        this.Cityid = Cityid;
     }
 
     public String getName() {

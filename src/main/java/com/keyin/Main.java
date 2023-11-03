@@ -1,6 +1,9 @@
 package com.keyin;
 
+import com.keyin.Aircraft.Aircraft;
+import com.keyin.Airports.Airport;
 import com.keyin.City.City;
+import com.keyin.Passengers.Passengers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +12,11 @@ import java.util.List;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static List<City> cities = new ArrayList<>();
+    public static List<Passengers> passengers = new ArrayList<>();
+
+    public static List<Airport> airports = new ArrayList<>();
+
+    public static List<Aircraft> aircrafts = new ArrayList<>();
 
     public static void main(String[] args) {
         // Press Alt+Enter with your caret at the highlighted text to see how
