@@ -1,17 +1,17 @@
 package com.keyin.Airports;
 
-import org.aspectj.apache.bcel.classfile.Code;
+import java.util.List;
 
 public class Airport {
-    private long AirportId;
+    private int AirportId;
     private String AirportName;
     private String code;
 
-    public Airport(long id, String AirportName, String code){
-        this.AirportId = id;
+
+    public Airport(int Airportid, String AirportName, String code){
+        this.AirportId = Airportid;
         this.AirportName = AirportName;
         this.code = code;
-        ;
     }
 
     public long getAirportId(){

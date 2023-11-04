@@ -14,6 +14,7 @@ import com.keyin.Airports.AirportService;
 import com.keyin.Airports.AirportSearchPrams;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -49,8 +50,9 @@ public class APIRoute {
     @PostMapping("/cities")
     public void cities(@RequestParam(value = "name", defaultValue = "Default") String name,
                        @RequestParam(value = "state", defaultValue = "null") String state,
-                       @RequestParam(value = "population", defaultValue = "null") int population) {
-        Main.cities.add(new City(0, name, state, population));
+                       @RequestParam(value = "population", defaultValue = "null") int population,
+                       @RequestParam(value = "Cityid", defaultValue = "null")int Cityid) {
+        Main.cities.add(new City(Cityid, name, state, population));
 
     }
 
@@ -72,8 +74,9 @@ public class APIRoute {
     @PostMapping("/passengers")
     public void passengers(@RequestParam(value = "firstName", defaultValue = "Default") String firstName,
                        @RequestParam(value = "lastName", defaultValue = "null") String lastName,
-                       @RequestParam(value = "phoneNumber", defaultValue = "null") String phoneNumber) {
-        Main.passengers.add(new Passengers(0, firstName, lastName, phoneNumber));
+                       @RequestParam(value = "phoneNumber", defaultValue = "null") String phoneNumber,
+                           @RequestParam(value = "Passid", defaultValue = "null")int Passid) {
+        Main.passengers.add(new Passengers(Passid, firstName, lastName, phoneNumber));
 
     }
 
@@ -95,8 +98,10 @@ public class APIRoute {
 
     @PostMapping("/airports")
     public void airports(@RequestParam(value = "AirportName", defaultValue = "Default") String AirportName,
-                           @RequestParam(value = "Code", defaultValue = "null") String Code) {
-        Main.airports.add(new Airport(0, AirportName, Code));
+                         @RequestParam(value = "Code", defaultValue = "null") String Code,
+                         @RequestParam(value = "Airportid", defaultValue = "null")int Airportid)
+    {
+        Main.airports.add(new Airport(Airportid, AirportName, Code));
 
     }
 
@@ -119,29 +124,10 @@ public class APIRoute {
     @PostMapping("/aircrafts")
     public void aircrafts(@RequestParam(value = "AircraftType", defaultValue = "Default") String AircraftType,
                            @RequestParam(value = "AirlineName", defaultValue = "null") String AirlineName,
-                           @RequestParam(value = "NumOfPassengers", defaultValue = "null") int NumOfPassengers) {
-        Main.aircrafts.add(new Aircraft(0, AircraftType, AirlineName, NumOfPassengers));
+                           @RequestParam(value = "NumOfPassengers", defaultValue = "null") int NumOfPassengers,
+                          @RequestParam(value = "Aircraftid", defaultValue = "null")int Aircraftid) {
+        Main.aircrafts.add(new Aircraft(Aircraftid, AircraftType, AirlineName, NumOfPassengers));
 
     }
-
-
-
-    private static void listAirportsInCity() {
-            // Implement the logic to list airports in a specific city
-        }
-
-        private static void listAircraftForPassenger() {
-            // Implement the logic to list aircraft for a specific passenger
-        }
-
-        private static void listAirportsForAircraft() {
-            // Implement the logic to list airports for a specific aircraft
-        }
-
-        private static void listAirportsForPassenger() {
-            // Implement the logic to list airports for a specific passenger
-        }
-
-        // ... Define your API endpoints ...
-    }
+}
 
